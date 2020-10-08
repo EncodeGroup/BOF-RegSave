@@ -6,7 +6,7 @@ Beacon Object File(BOF) for CobaltStrike that will acquire the necessary privile
 CNA will register the command `regdump`:
 
 ```
-beacon> regdump c:\temp\
+beacon> bof-regsave c:\temp\
 ```
 
 By default the output will be saved in the following files:
