@@ -3,7 +3,7 @@ Beacon Object File(BOF) for CobaltStrike that will acquire the necessary privile
 
 ## Instructions
 
-CNA will register the command `regdump`:
+CNA will register the command `bof-regsave`:
 
 ```
 beacon> bof-regsave c:\temp\
